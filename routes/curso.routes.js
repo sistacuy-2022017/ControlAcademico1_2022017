@@ -10,8 +10,10 @@ routers.post(
     "/",
     [
         check("NombreMateria", "el nombre es obligatorio").not().isEmpty(),
-        
-    ],cursoPost
-);
+        check("Catedratico", "el nombre de catedratico es obligatorio").not().isEmpty(),
+        check("Descripcion", "la descripcion es obligatoria").not().isEmpty(),
+        check("Precio", "el precio es obligatorio").not().isEmpty(),
+        validarCampos
+    ],cursoPost);
 
 module.exports = routers;

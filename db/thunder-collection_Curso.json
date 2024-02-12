@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Curso",
+    "dateExported": "2024-02-12T22:59:37.014Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "94924109-ac6f-45b0-82e1-2a24dc741157",
+            "colId": "5a7ff253-6321-4e1a-be70-e6f6f1137d26",
+            "containerId": "",
+            "name": "cursoPost",
+            "url": "http://localhost:3000/api/curso",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-12T22:50:57.928Z",
+            "modified": "2024-02-12T22:53:58.286Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"NombreMateria\": \"Mate\",\n  \"Catedratico\": \"cristopher duarte\",\n  \"Descripcion\": \"Matemática  3\",\n  \"Precio\": \"10 quetzal\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
