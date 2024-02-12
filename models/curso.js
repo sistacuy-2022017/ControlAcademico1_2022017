@@ -14,7 +14,7 @@ const CursoSchema = Schema ({
         required: [true, 'la descripcion es obligatoria']
     },
     Precio: {
-        type, String,
+        type: String,
         required: [true, 'el precio del curso es obligatorio']
     },
     EstadoCurso: {
