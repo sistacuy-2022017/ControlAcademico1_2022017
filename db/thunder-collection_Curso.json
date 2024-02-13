@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Curso",
-    "dateExported": "2024-02-12T22:59:37.014Z",
+    "dateExported": "2024-02-13T04:31:28.091Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,14 +14,42 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-02-12T22:50:57.928Z",
-            "modified": "2024-02-12T22:53:58.286Z",
+            "modified": "2024-02-13T04:18:32.681Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"NombreMateria\": \"Mate\",\n  \"Catedratico\": \"cristopher duarte\",\n  \"Descripcion\": \"Matemática  3\",\n  \"Precio\": \"10 quetzal\"\n}",
+                "raw": "{\n  \"NombreMateria\": \"Seminario\",\n  \"Catedratico\": \"Waldemart\",\n  \"Descripcion\": \"Seminario joya\",\n  \"Precio\": \"30 quetzales\"\n}",
                 "form": []
             },
+            "tests": []
+        },
+        {
+            "_id": "b3570092-a70e-4d89-8968-152a1f81cc79",
+            "colId": "5a7ff253-6321-4e1a-be70-e6f6f1137d26",
+            "containerId": "",
+            "name": "cursoGet",
+            "url": "http://localhost:3000/api/curso",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-13T04:16:00.671Z",
+            "modified": "2024-02-13T04:16:13.067Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "69ef4709-42a6-49d9-9afc-04611de911a5",
+            "colId": "5a7ff253-6321-4e1a-be70-e6f6f1137d26",
+            "containerId": "",
+            "name": "getCursoById",
+            "url": "http://localhost:3000/api/curso/65caed45594135c38fa09c99",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-13T04:26:58.281Z",
+            "modified": "2024-02-13T04:27:23.879Z",
+            "headers": [],
+            "params": [],
             "tests": []
         }
     ]
