@@ -2,7 +2,7 @@ const { Router } = require('express');
 const { check } = require('express-validator');
 
 const { validarCampos } = require('../middlewares/validar-campos');
-const { cursoPost, cursoGet, getCursoById } = require('../controller/curso.controller');
+const { cursoPost, cursoGet, getCursoById, cursoPut, cursoDelete } = require('../controller/curso.controller');
 const { existeCursoById } = require('../helpers/db-validators');
 
 const routers = Router();
@@ -32,4 +32,23 @@ routers.post(
         validarCampos
     ],cursoPost
 );
+
+routers.put(
+    "/:id",
+    [
+        check("id", "el id no es un formato valido de MongoDB").isMongoId(),
+        check("id").custom(existeCursoById),
+        validarCampos
+    ], cursoPut
+);
+
+routers.delete(
+    "/:id",
+    [
+        check("id", "el id no es un formato valido de MongoDB").isMongoId(),
+        check("id").custom(existeCursoById),
+        validarCampos
+    ], cursoDelete
+);
+
 module.exports = routers;

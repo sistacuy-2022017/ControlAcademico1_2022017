@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Curso",
-    "dateExported": "2024-02-13T04:31:28.091Z",
+    "dateExported": "2024-02-13T04:44:36.010Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -48,6 +48,39 @@
             "sortNum": 30000,
             "created": "2024-02-13T04:26:58.281Z",
             "modified": "2024-02-13T04:27:23.879Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "44824071-f5a9-44aa-802b-586a6a511161",
+            "colId": "5a7ff253-6321-4e1a-be70-e6f6f1137d26",
+            "containerId": "",
+            "name": "cursoPut",
+            "url": "http://localhost:3000/api/curso/65caed45594135c38fa09c99",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-02-13T04:38:57.567Z",
+            "modified": "2024-02-13T04:40:30.545Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"Precio\": \"23 quetzales\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7e682170-d650-421c-a8e3-9ebeac60536c",
+            "colId": "5a7ff253-6321-4e1a-be70-e6f6f1137d26",
+            "containerId": "",
+            "name": "cursoDelete",
+            "url": "http://localhost:3000/api/curso/65caed45594135c38fa09c99",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-02-13T04:43:37.780Z",
+            "modified": "2024-02-13T04:43:54.642Z",
             "headers": [],
             "params": [],
             "tests": []
