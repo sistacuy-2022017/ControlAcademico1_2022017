@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Curso",
-    "dateExported": "2024-02-13T04:44:36.010Z",
+    "dateExported": "2024-02-13T05:13:23.004Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-02-12T22:50:57.928Z",
-            "modified": "2024-02-13T04:18:32.681Z",
+            "modified": "2024-02-13T05:11:54.735Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"NombreMateria\": \"Seminario\",\n  \"Catedratico\": \"Waldemart\",\n  \"Descripcion\": \"Seminario joya\",\n  \"Precio\": \"30 quetzales\"\n}",
+                "raw": "{\n  \"NombreMateria\": \"seminario\",\n  \"Catedratico\": \"Waldemart\",\n  \"Descripcion\": \"Seminario joya\",\n  \"Precio\": \"30 quetzales\"\n}",
                 "form": []
             },
             "tests": []

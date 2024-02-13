@@ -3,7 +3,7 @@ const { check } = require('express-validator');
 
 const { validarCampos } = require('../middlewares/validar-campos');
 const { cursoPost, cursoGet, getCursoById, cursoPut, cursoDelete } = require('../controller/curso.controller');
-const { existeCursoById } = require('../helpers/db-validators');
+const { existeCursoById, existeCursoByName } = require('../helpers/db-validators');
 
 const routers = Router();
 
@@ -25,7 +25,7 @@ routers.get(
 routers.post(
     "/",
     [
-        check("NombreMateria", "el nombre es obligatorio").not().isEmpty(),
+        check("NombreMateria", "el nombre es obligatorio").custom(existeCursoByName).not().isEmpty(),
         check("Catedratico", "el nombre de catedratico es obligatorio").not().isEmpty(),
         check("Descripcion", "la descripcion es obligatoria").not().isEmpty(),
         check("Precio", "el precio es obligatorio").not().isEmpty(),
