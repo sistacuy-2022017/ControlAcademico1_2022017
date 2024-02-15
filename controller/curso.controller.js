@@ -39,7 +39,7 @@ const getCursoById = async (req, res = response) => {
 
 const cursoPut = async (req, res = response) => {
     const {id} = req.params;
-    const { _id, NombreMateria, Catedratico, ...resto} = req.body;
+    const { _id, EstadoCurso, ...resto} = req.body;
     await Curso.findByIdAndUpdate(id, resto);
 
     const  curso = await Curso.findOne({_id: id});
