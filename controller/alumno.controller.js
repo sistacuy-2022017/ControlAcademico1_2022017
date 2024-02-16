@@ -10,7 +10,7 @@ const alumno = require('../models/alumno');
 
 const alumnoPost = async (req, res) => {
     const { NombreAlumno, CorreoAlumno, Password, Edad, Curso } = req.body;
-    const alumno = new Alumno({ NombreAlumno, CorreoAlumno, Password, Edad, Curso });
+    const alumno = new Alumno({ NombreAlumno, CorreoAlumno, Password, Edad, Curso});
 
     const salt = bcryptjs.genSaltSync();
     alumno.Password = bcryptjs.hashSync(Password, salt);
@@ -21,6 +21,21 @@ const alumnoPost = async (req, res) => {
     });
 }
 
+const alumnoDelete = async (req, res) => {
+    const {id} = req.params;
+    await Alumno.findByIdAndUpdate(id,{Estado: false});
+
+    const alumno = await Alumno.findOne({_id: id});
+
+    res.status(200).json({
+        msg: 'Usuario a eliminar',
+        alumno
+    });
+}
+
+
+
 module.exports = {
-    alumnoPost
+    alumnoPost,
+    alumnoDelete
 }
