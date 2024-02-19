@@ -16,7 +16,7 @@ const alumnoGet = async (req, res = response) => {
                 .populate({
                     path: 'cursos',
                     model: 'Curso',
-                    select: '-_id NombreMateria Catedratico' // Excluye el campo _id y selecciona todos los demás campos del curso
+                    select: '-_id NombreMateria Catedratico' 
                 })
         ]);
         res.status(200).json({
@@ -74,7 +74,7 @@ const alumnoDelete = async (req, res) => {
     const alumno = await Alumno.findOne({ _id: id });
 
     res.status(200).json({
-        msg: 'Usuario eliminado, se paso de insano',
+        msg: 'Usuario eliminado, se paso de joya',
         alumno
     });
 }

@@ -2,33 +2,33 @@ const { Router } = require('express');
 const { check } = require('express-validator');
 
 const { validarCampos } = require('../middlewares/validar-campos');
-const { existeAlumnoById } = require('../helpers/db-validators-alumno');
-const { alumnoPost, alumnoDelete, alumnoGet, alumnoPut, getAlumnoById } = require('../controller/alumno.controller');
+const { existProfesorById } = require('../helpers/db-validators-profesor');
+const { getProfesorById, profesorGet, profesorPost, profesorPut, profesorDelete } = require('../controller/profesor.controller');
 
 const routers = Router();
 
 routers.get(
     "/",
-    alumnoGet
+    profesorGet
 );
 
 routers.get(
     '/:id',
     [
         check('id', 'El id no es un formato valido de MongoDB').isMongoId(),
-        check('id').custom(existeAlumnoById),
-    ],getAlumnoById
+        check('id').custom(existProfesorById),
+    ],getProfesorById
 );
 
 routers.post(
     "/",
     [
-        check("NombreAlumno","El nombre es obligatorio").not().isEmpty(),
-        check("CorreoAlumno","El correo es obligatorio").not().isEmpty(),
+        check("NombreProfesor","El nombre es obligatorio").not().isEmpty(),
+        check("CorreoProfesor","El correo es obligatorio").not().isEmpty(),
         check("Password","El password debe ser mayor a 6 caracteres").isLength({min: 6,}),
         check("Edad","la Edad es una cadena de texto").not().isEmpty(),
         validarCampos
-    ], alumnoPost
+    ], profesorPost
 );
 
 routers.put(
@@ -37,23 +37,23 @@ routers.put(
         check('id', 'El id no es un formato valido de MongoDB').isMongoId(),
         check('id', 'El id es obligatorio').not().isEmpty(),
         validarCampos
-    ], alumnoPut
+    ], profesorPut
 );
 
 routers.get(
     '/:id',
     [
         check('id', 'El id no es un formato valido de MongoDB').isMongoId(),
-        check('id').custom(existeAlumnoById),
+        check('id').custom(existProfesorById),
         validarCampos
-    ], getAlumnoById);
+    ], getProfesorById);
 
 routers.delete(
     "/:id",
     [
         check("id", "El id no es un formato válido de MongoDB").isMongoId(),
         validarCampos
-    ], alumnoDelete
+    ], profesorDelete
 );
 
 

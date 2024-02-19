@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Alumno",
-    "dateExported": "2024-02-19T02:18:48.625Z",
+    "dateExported": "2024-02-19T03:17:26.443Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-02-18T18:52:48.457Z",
-            "modified": "2024-02-19T02:10:55.339Z",
+            "modified": "2024-02-19T02:24:15.753Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"NombreAlumno\": \"pedro\",\n  \"CorreoAlumno\": \"plopez-2019280@kinal.edu.gt\",\n  \"Password\": \"123456\",\n  \"Edad\": \"10 años\",\n  \"Curso\": \"65caed7a594135c38fa09c9d\"\n}",
+                "raw": "{\n  \"NombreAlumno\": \"pedro\",\n  \"CorreoAlumno\": \"plopez-2019280@kinal.edu.gt\",\n  \"Password\": \"123456\",\n  \"Edad\": \"10 años\",\n  \"Curso\": \"65caed7a594135c38fa09c9d\",\n  \"role\": \"STUDENT_ROLE\"\n}",
                 "form": []
             },
             "tests": []
