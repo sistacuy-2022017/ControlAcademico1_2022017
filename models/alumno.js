@@ -1,4 +1,5 @@
 const {Schema, model} = require('mongoose');
+const cursos = require('./curso');
 
 const AlumnoSchema = Schema({
     NombreAlumno: {
@@ -17,10 +18,9 @@ const AlumnoSchema = Schema({
         type: String,
         required: [true, 'la edad es obligatoria']
     },
-    Curso: {
-        type: String,
-        required: [true, 'el nombre del curso es obligatorio']
-    },
+
+    cursos: [{type: Schema.Types.ObjectId, ref: 'cursos'}],
+    
     Estado: {
         type: Boolean,
         default: true
