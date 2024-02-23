@@ -1,4 +1,6 @@
 const Curso = require('../models/curso');
+const Role = require('../models/role')
+
 
 const existeCursoById = async (id = '') => {
     const existeCurso = await Curso.findOne({ id });
@@ -19,6 +21,14 @@ const existeCursoByName = async (NombreMateria = '') => {
 
     if (existeName) {
         throw new Error(`La materia con el nombre ${NombreMateria} ya existe`);
+    }
+}
+
+const esRolValido = async (role='') => {
+    const existeRol = await Role.findOne({role});
+
+    if(!existeRol){
+        throw new  Error(`El role ${role} no es un rol valido`);
     }
 }
 

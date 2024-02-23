@@ -16,7 +16,7 @@ const alumnoGet = async (req, res = response) => {
                 .populate({
                     path: 'cursos',
                     model: 'Curso',
-                    select: '-_id NombreMateria Catedratico' 
+                    select: '-_id NombreMateria Catedratico'
                 })
         ]);
         res.status(200).json({
@@ -41,11 +41,11 @@ const getAlumnoById = async (req, res) => {
 
 const alumnoPost = async (req, res) => {
     try {
-        const { NombreAlumno, CorreoAlumno, Password, Edad, Curso } = req.body;
+        const { NombreAlumno, CorreoAlumno, Password, Edad, Role, Curso } = req.body;
         let alumno = await Alumno.findOne({ CorreoAlumno });
         const cursito = await Curson.findById(Curso);
         if (!alumno) {
-            alumno = new Alumno({ NombreAlumno, CorreoAlumno, Password, Edad });
+            alumno = new Alumno({ NombreAlumno, CorreoAlumno, Password, Edad, Role });
         }
         if (!cursito) {
             return res.status(404).json({ message: 'El curso no existe papito:c' });
@@ -56,6 +56,9 @@ const alumnoPost = async (req, res) => {
         if (alumno.cursos.length >= 3) {
             return res.status(400).json({ message: 'El alumno ya tiene el limite de cursos asociados que son 3' });
         }
+
+        const salt = bcryptjs.genSaltSync();
+        alumno.Password = bcryptjs.hashSync(Password, salt);
 
         alumno.cursos.push(cursito);
         await alumno.save();
