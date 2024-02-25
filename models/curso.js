@@ -1,6 +1,6 @@
-const {Schema, model} = require('mongoose');
+const { Schema, model } = require('mongoose');
 
-const CursoSchema = Schema ({
+const CursoSchema = Schema({
     NombreMateria: {
         type: String,
         required: [true, 'el nombre es obligatorio']
@@ -20,7 +20,7 @@ const CursoSchema = Schema ({
     EstadoCurso: {
         type: Boolean,
         default: true
-    }
+    },
 
 });
 

@@ -19,6 +19,12 @@ const ProfesorSchema = Schema({
         required: [true, 'la edad es obligatoria']
     },
 
+    Role: {
+        type: String,
+        required: true,
+        default: 'PROFESOR_ROLE'
+    },
+
     cursos: [{type: Schema.Types.ObjectId, ref: 'cursos'}],
     
     Estado: {

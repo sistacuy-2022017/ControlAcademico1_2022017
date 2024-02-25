@@ -16,7 +16,7 @@ const profesorGet = async (req, res = response) => {
                 .populate({
                     path: 'cursos',
                     model: 'Curso',
-                    select: '-_id NombreMateria Catedratico' 
+                    select: '-_id NombreMateria Catedratico'
                 })
         ]);
         res.status(200).json({
@@ -41,11 +41,11 @@ const getProfesorById = async (req, res) => {
 
 const profesorPost = async (req, res) => {
     try {
-        const { NombreProfesor, CorreoProfesor, PasswordProfesor, Edad, Curso } = req.body;
+        const { NombreProfesor, CorreoProfesor, PasswordProfesor, Edad, Role, Curso } = req.body;
         let profesor = await Profesor.findOne({ CorreoProfesor });
         const cursito = await Curson.findById(Curso);
         if (!profesor) {
-            profesor = new Profesor({  NombreProfesor, CorreoProfesor, PasswordProfesor, Edad});
+            profesor = new Profesor({ NombreProfesor, CorreoProfesor, PasswordProfesor, Role, Edad });
         }
         if (!cursito) {
             return res.status(404).json({ message: 'El curso no existe papito:c' });

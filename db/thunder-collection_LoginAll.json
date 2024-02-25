@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "LoginAll",
-    "dateExported": "2024-02-25T05:42:14.281Z",
+    "dateExported": "2024-02-25T23:12:55.945Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-02-25T04:40:20.022Z",
-            "modified": "2024-02-25T05:41:34.284Z",
+            "modified": "2024-02-25T19:48:04.367Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n\"CorreoProfesor\": \"prueba4-2019280@org.gt\",\n\"PasswordProfesor\": \"123456\"\n}",
+                "raw": "{\n\"CorreoProfesor\": \"prueb18-2019280@org.gt\",\n\"PasswordProfesor\": \"123456\"\n}",
                 "form": []
             },
             "tests": []
