@@ -25,7 +25,7 @@ routers.post(
     [
         check("NombreProfesor","El nombre es obligatorio").not().isEmpty(),
         check("CorreoProfesor","El correo es obligatorio").not().isEmpty(),
-        check("Password","El password debe ser mayor a 6 caracteres").isLength({min: 6,}),
+        check("PasswordProfesor","El password debe ser mayor a 6 caracteres").isLength({min: 6,}),
         check("Edad","la Edad es una cadena de texto").not().isEmpty(),
         validarCampos
     ], profesorPost

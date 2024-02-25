@@ -10,7 +10,7 @@ const ProfesorSchema = Schema({
         type: String,
         required: [true, 'el correo es obligatorio']
     },
-    Password: {
+    PasswordProfesor: {
         type: String,
         required: [true, 'el password es obligatorio']
     },

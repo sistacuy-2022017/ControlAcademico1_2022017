@@ -41,11 +41,11 @@ const getProfesorById = async (req, res) => {
 
 const profesorPost = async (req, res) => {
     try {
-        const { NombreProfesor, CorreoProfesor, Password, Edad, Curso } = req.body;
+        const { NombreProfesor, CorreoProfesor, PasswordProfesor, Edad, Curso } = req.body;
         let profesor = await Profesor.findOne({ CorreoProfesor });
         const cursito = await Curson.findById(Curso);
         if (!profesor) {
-            profesor = new Profesor({  NombreProfesor, CorreoProfesor, Password, Edad});
+            profesor = new Profesor({  NombreProfesor, CorreoProfesor, PasswordProfesor, Edad});
         }
         if (!cursito) {
             return res.status(404).json({ message: 'El curso no existe papito:c' });
